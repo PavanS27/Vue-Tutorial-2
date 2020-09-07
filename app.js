@@ -3,4 +3,9 @@ new Vue({
   data: {
     name: "Paan",
   },
+  methods: {
+    greet: function (time) {
+      return "Good" + " " + time + " " + this.name;
+    },
+  },
 });
