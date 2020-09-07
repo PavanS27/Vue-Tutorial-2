@@ -14,8 +14,8 @@
       <a v-bind:href="website">Google</a>
       <small>or</small>
       <p v-on:click.prevent="click" v-html="websiteTag"></p>
-      <h1>Dom Events</h1>
 
+      <h1>Dom Events</h1>
       <button v-on:click.once="add(1)">Add</button>
       <button v-on:click="subtract(1)">Subtract</button>
       <button @dblclick="add(10)">Add Doubles</button>
@@ -25,9 +25,11 @@
 
       <h1>Keyboard Events</h1>
       <label>Name:</label>
-      <input type="text" v-on:keyup.enter="logName" />
+      <input type="text" v-model="Name" />
+      <span>{{Name}}</span>
       <label>Age:</label>
-      <input type="text" v-on:keyup.enter="logAge" />
+      <input type="text" v-model="Age" />
+      <span>{{Age}}</span>
     </div>
 
     <script src="app.js"></script>

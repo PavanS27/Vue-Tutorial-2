@@ -7,6 +7,8 @@ new Vue({
     age: 20,
     x: 0,
     y: 0,
+    Name: "",
+    Age: "",
   },
   methods: {
     greet: function (time) {
