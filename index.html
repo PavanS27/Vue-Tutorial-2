@@ -11,6 +11,9 @@
     <div id="vue-app">
       <h1>{{name}}</h1>
       <p>{{greet("afternoon")}}</p>
+      <a v-bind:href="website">Google</a>
+      <small>or</small>
+      <p v-html="websiteTag"></p>
     </div>
 
     <script src="app.js"></script>
