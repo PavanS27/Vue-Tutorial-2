@@ -80,3 +80,33 @@ new Vue({
     },
   },
 });
+
+var one = new Vue({
+  el: "#vue-app-one",
+  data: {
+    title: "Vue app One",
+  },
+  methods: {},
+  computed: {
+    greet: function () {
+      return "Hello from One";
+    },
+  },
+});
+
+var two = new Vue({
+  el: "#vue-app-two",
+  data: {
+    title: "Vue app Two",
+  },
+  methods: {
+    changeTitle: function () {
+      one.title = "Iam changed wtf";
+    },
+  },
+  computed: {
+    greet: function () {
+      return "Iam the second one.Hey";
+    },
+  },
+});
