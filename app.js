@@ -80,6 +80,20 @@ new Vue({
     },
   },
 });
+Vue.component("greeting", {
+  template:
+    "<p>Hey There {{name}} . <button v-on:click='chnageName'>Change name</button></p> ",
+  data: function () {
+    return {
+      name: "Paan",
+    };
+  },
+  methods: {
+    chnageName: function () {
+      this.name = "Pimpa";
+    },
+  },
+});
 
 var one = new Vue({
   el: "#vue-app-one",
