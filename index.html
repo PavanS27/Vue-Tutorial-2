@@ -61,6 +61,14 @@
       <p v-else-if="suc">Success here</p> -->
       <p v-show="error">Error shown here</p>
       <p v-show="suc">Success shown here</p>
+
+      <h1>Looping through Lists</h1>
+      <p v-for="(character,index) in characters">{{index}}:{{character}}</p>
+      <ul>
+        <li v-for="(ninja,index) in ninjas">
+          {{index}}.{{ninja.name}} - {{ninja.age}}
+        </li>
+      </ul>
     </div>
 
     <script src="app.js"></script>
