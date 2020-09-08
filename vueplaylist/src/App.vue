@@ -1,21 +1,21 @@
 <template>
   <div>
     <h1>{{title}}</h1>
-    <p>{{greeting()}}</p>
+    <pavan></pavan>
   </div>
 </template>
 
 <script>
+import Pavan from "./Pavan.vue";
+
 export default {
+  components: {
+    pavan: Pavan,
+  },
   data() {
     return {
-      title: "First Vue File yea",
+      title: "Pavan app",
     };
-  },
-  methods: {
-    greeting: function () {
-      return "Hello Paan";
-    },
   },
 };
 </script>
