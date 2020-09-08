@@ -23,6 +23,7 @@ new Vue({
     ],
     health: 100,
     ended: false,
+    output: "Fav Food",
   },
   methods: {
     greet: function (time) {
@@ -61,6 +62,10 @@ new Vue({
     restart: function () {
       this.health = 100;
       this.ended = false;
+    },
+    readRefs: function () {
+      console.log(this.$refs.input.value);
+      this.output = this.$refs.input.value;
     },
   },
   computed: {

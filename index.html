@@ -81,6 +81,11 @@
         <button v-show="!ended" v-on:click="punch">Punch</button>
         <button v-on:click="restart">Restart</button>
       </div>
+
+      <h1>Refs</h1>
+      <input type="text" ref="input" />
+      <button v-on:click="readRefs">Submit</button>
+      <p>Your fav Food : {{output}}</p>
     </div>
 
     <h1>Multiple Instances</h1>
