@@ -69,6 +69,18 @@
           {{index}}.{{ninja.name}} - {{ninja.age}}
         </li>
       </ul>
+
+      <h1>Punchbag Game</h1>
+      <div id="bag" v-bind:class="{burst:ended}"></div>
+
+      <div id="bag-health">
+        <div v-bind:style="{width:health + '%'}"></div>
+      </div>
+
+      <div id="controls">
+        <button v-show="!ended" v-on:click="punch">Punch</button>
+        <button v-on:click="restart">Restart</button>
+      </div>
     </div>
 
     <script src="app.js"></script>
