@@ -23,24 +23,24 @@ export default {
   },
   //lifecycle hooks
 
-  beforeCreate() {
-    alert("Before create");
-  },
-  created() {
-    alert("created");
-  },
-  beforeMount() {
-    alert("Before Mount");
-  },
-  mounted() {
-    alert("mounted");
-  },
-  beforeUpdate() {
-    alert("BeforeUpdate");
-  },
-  updated() {
-    alert("Updated");
-  },
+  // beforeCreate() {
+  //   alert("Before create");
+  // },
+  // created() {
+  //   alert("created");
+  // },
+  // beforeMount() {
+  //   alert("Before Mount");
+  // },
+  // mounted() {
+  //   alert("mounted");
+  // },
+  // beforeUpdate() {
+  //   alert("BeforeUpdate");
+  // },
+  // updated() {
+  //   alert("Updated");
+  // },
 };
 </script>
 
