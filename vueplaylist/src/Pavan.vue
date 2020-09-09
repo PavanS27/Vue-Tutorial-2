@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>list of paans</h1>
     <ul>
       <li v-bind:key="paan" v-for="paan in paans">{{paan}}</li>
     </ul>
@@ -16,5 +17,8 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+h1 {
+  color: green;
+}
 </style>
