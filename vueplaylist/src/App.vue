@@ -1,8 +1,9 @@
 <template>
   <div>
-    <app-header></app-header>
+    <app-header v-bind:title="title"></app-header>
     <paans v-bind:ninjas="ninjas"></paans>
-    <app-footer></app-footer>
+
+    <app-footer v-bind:title="title"></app-footer>
   </div>
 </template>
 
@@ -28,6 +29,7 @@ export default {
         { name: "Kami", speciality: "Webpack", show: false },
         { name: "Yoshi", speciality: "Data Diggin", show: false },
       ],
+      title: "Welcome paan",
     };
   },
 };
