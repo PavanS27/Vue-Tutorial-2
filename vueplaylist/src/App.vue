@@ -1,27 +1,28 @@
 <template>
   <div>
-    <h1>{{title}}</h1>
-    <pavan></pavan>
+    <app-header></app-header>
+    <paans></paans>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-import Pavan from "./Pavan.vue";
+import Header from "./components/header";
+import Footer from "./components/footer";
+import Paans from "./components/Paans";
 
 export default {
   components: {
-    pavan: Pavan,
+    "app-header": Header,
+    "app-footer": Footer,
+    paans: Paans,
   },
+
   data() {
-    return {
-      title: "Pavan app",
-    };
+    return {};
   },
 };
 </script>
 
-<style scoped>
-h1 {
-  color: purple;
-}
+<style >
 </style>
