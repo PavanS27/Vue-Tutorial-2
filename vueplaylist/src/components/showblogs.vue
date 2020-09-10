@@ -2,8 +2,8 @@
   <div v-theme:column="'narrow'" id="show-blogs">
     <h1>All the blogs</h1>
     <div v-bind:key="post" v-for="post in posts" class="single-blog">
-      <h2 v-rainbow>{{ post.title }}</h2>
-      <article>{{ post.body }}</article>
+      <h2 v-rainbow>{{ post.title | to-uppercase}}</h2>
+      <article>{{ post.body | snippet}}</article>
     </div>
   </div>
 </template>
@@ -12,17 +12,17 @@
 export default {
   data() {
     return {
-      posts: []
+      posts: [],
     };
   },
   methods: {},
   created() {
     this.$http
       .get("https://jsonplaceholder.typicode.com/posts")
-      .then(function(data) {
+      .then(function (data) {
         this.posts = data.body.slice(0, 10);
       });
-  }
+  },
 };
 </script>
 
