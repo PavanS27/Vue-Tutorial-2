@@ -1,7 +1,7 @@
 <template>
   <div id="add-blog">
     <h2>ADD a NEW post</h2>
-    <form>
+    <form v-if="!submitted">
       <label>Title</label>
       <input type="text" v-model.lazy="blog.title" required />
       <label>Content</label>
@@ -18,19 +18,21 @@
       </div>
       <label>Authors</label>
       <select v-model="blog.author">
-        <option v-bind:key="auth" v-for="auth in authors">{{auth}}</option>
+        <option v-bind:key="auth" v-for="auth in authors">{{ auth }}</option>
       </select>
+      <button v-on:click.prevent="post">Add Blog</button>
     </form>
+    <div v-if="submitted"><h1>Thnaks</h1></div>
     <div id="preview">
       <h3>Preview Blog</h3>
-      <p>Blog title:{{blog.title}}</p>
+      <p>Blog title:{{ blog.title }}</p>
       <p>Blog content:</p>
-      <p>{{blog.content}}</p>
+      <p>{{ blog.content }}</p>
       <p>Blog categories</p>
       <ul>
-        <li v-bind:key="cate" v-for="cate in blog.categories">{{cate}}</li>
+        <li v-bind:key="cate" v-for="cate in blog.categories">{{ cate }}</li>
       </ul>
-      <p>Authors:{{blog.author}}</p>
+      <p>Authors:{{ blog.author }}</p>
     </div>
   </div>
 </template>
@@ -43,16 +45,29 @@ export default {
         title: "",
         content: "",
         categories: [],
-        author: "",
+        author: ""
       },
       authors: ["shaekspera", "avenger", "songatha"],
+      submitted: false
     };
   },
-  methods: {},
+  methods: {
+    post: function() {
+      this.$http
+        .post("https://jsonplaceholder.typicode.com/posts", {
+          title: this.blog.title,
+          body: this.blog.content,
+          userId: 1
+        })
+        .then(function(data) {
+          this.submitted = true;
+        });
+    }
+  }
 };
 </script>
 
-<style >
+<style>
 #add-blog * {
   box-sizing: border-box;
 }
