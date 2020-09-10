@@ -22,7 +22,7 @@
       </select>
       <button v-on:click.prevent="post">Add Blog</button>
     </form>
-    <div v-if="submitted"><h1>Thnaks</h1></div>
+    <div v-if="submitted"><h1>Thanks</h1></div>
     <div id="preview">
       <h3>Preview Blog</h3>
       <p>Blog title:{{ blog.title }}</p>

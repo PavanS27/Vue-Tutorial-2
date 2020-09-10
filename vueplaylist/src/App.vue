@@ -16,7 +16,8 @@
         <button v-on:click="handleSubmit">Submit</button>
       </div>
     </form-helper>-->
-    <blog></blog>
+    <!-- <blog></blog> -->
+    <add></add>
   </div>
 </template>
 
@@ -26,6 +27,7 @@
 // import Paans from "./components/Paans";
 // import formHelper from "./components/formHelper";
 import Blog from "./components/Blog";
+import Add from "./components/showblogs";
 
 export default {
   components: {
@@ -34,6 +36,7 @@ export default {
     //   paans: Paans,
     //   "form-helper": formHelper,
     blog: Blog,
+    add: Add
   },
 
   data() {
@@ -53,9 +56,8 @@ export default {
     // updateTitle: function (event) {
     //   this.title = event;
     // },
-  },
+  }
 };
 </script>
 
-<style >
-</style>
+<style></style>
