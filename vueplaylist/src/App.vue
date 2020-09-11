@@ -18,6 +18,7 @@
     </form-helper>-->
     <!-- <blog></blog> -->
     <add></add>
+    <list></list>
   </div>
 </template>
 
@@ -28,6 +29,7 @@
 // import formHelper from "./components/formHelper";
 import Blog from "./components/Blog";
 import Add from "./components/showblogs";
+import List from "./components/ListBlogs";
 
 export default {
   components: {
@@ -36,7 +38,8 @@ export default {
     //   paans: Paans,
     //   "form-helper": formHelper,
     blog: Blog,
-    add: Add
+    add: Add,
+    list: List,
   },
 
   data() {
@@ -56,7 +59,7 @@ export default {
     // updateTitle: function (event) {
     //   this.title = event;
     // },
-  }
+  },
 };
 </script>
 
