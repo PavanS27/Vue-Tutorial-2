@@ -19,6 +19,7 @@
     <!-- <blog></blog> -->
     <!-- <add></add>
     <list></list> -->
+    <h></h>
     <router-view></router-view>
   </div>
 </template>
@@ -31,6 +32,7 @@
 import Blog from "./components/Blog";
 import Add from "./components/showblogs";
 import List from "./components/ListBlogs";
+import H from "./components/H";
 
 export default {
   components: {
@@ -40,7 +42,8 @@ export default {
     //   "form-helper": formHelper,
     blog: Blog,
     add: Add,
-    list: List
+    list: List,
+    h: H
   },
 
   data() {
