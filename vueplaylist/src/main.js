@@ -1,10 +1,17 @@
 import Vue from "vue";
 import App from "./App.vue";
 import VueResource from "vue-resource";
+import VueRouter from "vue-router";
+import Routes from "./routes";
 
 export const bus = new Vue();
 
 Vue.use(VueResource);
+Vue.use(VueRouter);
+
+const router = new VueRouter({
+  routes: Routes
+});
 
 //Filters
 
@@ -30,5 +37,6 @@ Vue.directive("theme", {
 
 new Vue({
   el: "#app",
-  render: h => h(App)
+  render: h => h(App),
+  router: router
 });

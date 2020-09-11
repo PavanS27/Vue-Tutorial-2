@@ -17,8 +17,9 @@
       </div>
     </form-helper>-->
     <!-- <blog></blog> -->
-    <add></add>
-    <list></list>
+    <!-- <add></add>
+    <list></list> -->
+    <router-view></router-view>
   </div>
 </template>
 
@@ -39,7 +40,7 @@ export default {
     //   "form-helper": formHelper,
     blog: Blog,
     add: Add,
-    list: List,
+    list: List
   },
 
   data() {
@@ -59,7 +60,7 @@ export default {
     // updateTitle: function (event) {
     //   this.title = event;
     // },
-  },
+  }
 };
 </script>
 
