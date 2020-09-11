@@ -2,9 +2,11 @@
   <div v-theme:column="'narrow'" id="show-blogs">
     <h1>All the blogs</h1>
     <input type="text" v-model="search" placeholder="Search posts" />
-    <div v-bind:key="post" v-for="post in filteredBlogs " class="single-blog">
-      <h2 v-rainbow>{{ post.title | to-uppercase}}</h2>
-      <article>{{ post.body | snippet}}</article>
+    <div v-bind:key="post" v-for="post in filteredBlogs" class="single-blog">
+      <router-link v-bind:to="'/blog/' + post.id">
+        <h2>{{ post.title | (to - uppercase) }}</h2></router-link
+      >
+      <article>{{ post.body | snippet }}</article>
     </div>
   </div>
 </template>
@@ -15,14 +17,14 @@ export default {
   data() {
     return {
       posts: [],
-      search: "",
+      search: ""
     };
   },
   methods: {},
   created() {
     this.$http
       .get("https://jsonplaceholder.typicode.com/posts")
-      .then(function (data) {
+      .then(function(data) {
         this.posts = data.body.slice(0, 10);
       });
   },
@@ -30,16 +32,20 @@ export default {
   filters: {
     toUppercase(value) {
       return value.toUpperCase();
-    },
+    }
   },
   directives: {
     rainbow: {
       bind(el, binding, vnode) {
-        el.style.color = "#" + Math.random().toString().slice(2, 8);
-      },
-    },
+        el.style.color =
+          "#" +
+          Math.random()
+            .toString()
+            .slice(2, 8);
+      }
+    }
   },
-  mixins: [Search],
+  mixins: [Search]
 };
 </script>
 
